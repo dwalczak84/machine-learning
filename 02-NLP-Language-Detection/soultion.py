@@ -11,24 +11,34 @@ def language_detection(s):
     DE_count = 0
     ES_count = 0
     
+    # Most common words will be unique for each language grup. For example 'an' in English and 'an' in German will not be included 
+    # it is not uniform for these languages
+    
+    # Most common words in German language
     DE = ['der', 'die', 'und', 'den', 'von', 'zu', 'das', 'mit', 'sich', 'auf','f\xfcr', 'ist', 'im', 'dem', 'nicht', 'ein',  'Die', 
     'eine', 'als', 'auch', 'werden', 'aus', 'er', 'hat', 'da\xdf', 'sie', 'nach', 'wird', 'bei', 'einer', 'Der', 'um', 'am', 'sind', 
     'noch', 'wie', 'einem', '\xfcber', 'einen', 'Das', 'Sie', 'zum', 'war', 'haben', 'nur', 'oder', 'aber', 'vor', 'zur', 'bis', 
     'mehr', 'durch', 'man', 'sein', 'wurde', 'sei', 'In', 'Prozent', 'hatte', 'kann', 'gegen', 'vom', 'k\xf6nnen', 'schon', 'wenn', 
     'habe', 'seine', 'Mark', 'ihre', 'dann', 'unter', 'wir', 'soll', 'ich', 'eines', 'Es', 'Jahr', 'zwei', 'Jahren', 'diese', 
     'dieser', 'wieder', 'keine', 'Uhr', 'seiner', 'worden', 'Und', 'will', 'zwischen', 'Im', 'immer', 'Millionen', 'Ein', 'sagte']
+    
+    # Most common words in French language
     FR = ['de', 'le', 'et', 'les', 'une', 'est', 'pour', 'qui', 'dans', 'par', 'plus', 'pas', 'au', 'sur', 'ne', 'ce', 'il', 'sont', 
     'ou', 'avec', 'Il', 'aux', "d'unn", 'cette', "d'une", 'ont', 'ses', 'mais', 'comme', 'tout', 'nous', 'sa', 'Mais', 'fait', 
     '\xe9t\xe9', 'aussi', 'leur', 'bien', 'peut', 'ces', 'deux', 'A', 'ans', 'l', 'encore', "n'est", 'march\xe9', 'Pour', 'donc', 
     'cours', "qu'il", 'moins', 'sans', "C'est", 'Et', 'entre', 'Ce', 'faire', 'elle', "c'est", 'peu', 'vous', 'prix', 'On', 'dont', 
     'lui', '\xe9galement', 'Dans', 'effet', 'pays', 'cas', 'millions', 'Belgique', 'BEF', 'mois', 'leurs', 'taux', 'ann\xe9es', 
     'temps', 'groupe']
+    
+    # Most common words in English langauge
     EN = ['the', 'of', 'to', 'and', 'for', 'is', 'that', 'on', 'said', 'with', 'be', 'by', 'as', 'are', 'at', 'from', 'it', 'has',  
     'have', 'will', 'or', 'its', 'not', 'were', 'which', 'this', 'but', 'can', 'more', 'his', 'been', 'would', 'about', 'their', 
     'also', 'they', 'million', 'had', 'than', 'up', 'who', 'In', 'one', 'you', 'new', 'I', 'other', 'year', 'all', 'two', 'S', 
     'But', 'It', 'company', 'into', 'U', 'Mr.', 'system', 'some', 'when', 'out', 'last', 'only', 'after', 'first', 'time', 'says', 
     'years', 'market', 'no', 'over', 'we', 'could', 'if', 'people', 'percent', 'such', 'This', 'most', 'use', 'because', 'any', 
     'data', 'there', 'them', 'government', 'may', 'software', 'New', 'now', 'many']
+    
+    # Most common words in Spanish langauge
     ES = ['y', 'el', 'los', 'no', 'las', 'del', 'por', 'con', 'una', 'lo', 'para', 'su', 'al', 'como', 'más', 'o', 'pero', 'me', 
     'ha', 'sus', 'si', 'yo', 'ya', 'este', 'porque', 'muy', 'todo', 'cuando', 'que', 'sin', 'sobre', 'está', 'también', 'esta', 
     'hay', 'sí', 'entre', 'ser', 'era', 'mi', 'dos', 'había', 'nos', 'años', 'tiene', 'hasta', 'desde', 'te', 'eso', 'fue', 
