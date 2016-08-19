@@ -1,2 +1,2 @@
 # machine-learning
-Machine Learning problems and solutions
+Machine Learning domain problems and solutions
